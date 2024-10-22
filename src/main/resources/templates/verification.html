@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác thực email</title>
+</head>
+<body>
+<div th:if="${isVerified}">
+    <h1>Xác thực email thành công!</h1>
+    <p>Bạn có thể <a th:href="@{/login}">đăng nhập</a> ngay bây giờ.</p>
+</div>
+<div th:unless="${isVerified}">
+    <h1>Xác thực email thất bại!</h1>
+    <p>Vui lòng thử lại hoặc liên hệ với quản trị viên.</p>
+</div>
+</body>
+</html>

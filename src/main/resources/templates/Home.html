@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ</title>
+</head>
+<body>
+<h1>Chào mừng đến với trang web bán quần áo!</h1>
+<p>Đây là trang chủ của website.</p>
+
+<div sec:authorize="isAuthenticated()">
+  <p>Xin chào, <span sec:authentication="name"></span>!</p>
+  <form th:action="@{/logout}" method="post">
+    <button type="submit">Đăng xuất</button>
+  </form>
+</div>
+</body>
+</html>
