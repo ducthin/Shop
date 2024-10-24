@@ -41,16 +41,10 @@
                             <p>Bạn chưa có tài khoản? <a th:href="@{/register}" id="registerLink">Đăng ký</a></p>
                             <a th:href="@{/forgot-password}" id="forgotPasswordLink">Quên mật khẩu?</a>
                             <div th:if="${param.error}">
-                                <p style="color: red;">Sai tên đăng nhập hoặc mật khẩu.</p>
+                                <p style="color: red;" th:text="${param.error == 'disabled' ? 'User is not enabled' : 'Sai tên đăng nhập hoặc mật khẩu.'}"></p>
                             </div>
                             <div th:if="${param.verified}">
                                 <p style="color: green;">Xác thực email thành công. Bạn có thể đăng nhập ngay bây giờ.</p>
-                            </div>
-                            <div th:if="${param.resetSuccess}">
-                                <p style="color: green;">Đặt lại mật khẩu thành công. Bạn có thể đăng nhập ngay bây giờ.</p>
-                            </div>
-                            <div th:if="${param.logout}">
-                                <p style="color: red;">Đăng xuất thành công.</p>
                             </div>
                         </div>
                     </form>
